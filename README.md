@@ -32,8 +32,6 @@ Netflix Watch Party transforms solo streaming into a shared social experience. W
 
 Click the image above to watch the demo video
 
-*Note: Replace YOUTUBE_VIDEO_ID_HERE with your actual YouTube video ID.*
-
 ---
 
 ## 📱 Live Demo

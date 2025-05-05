@@ -72,31 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Init user first
     initUser();
     
-    // Add buttons to movie cards
-    const movieCards = document.querySelectorAll('.card');
-    console.log("Found movie cards:", movieCards.length);
-    
-    movieCards.forEach(card => {
-      // Skip if already has button
-      if (!card.querySelector('.watch-party-btn')) {
-        const cardBody = card.querySelector('.card-body');
-        const button = document.createElement('div');
-        button.className = 'watch-party-btn';
-        button.textContent = 'Start Watch Party';
-        button.addEventListener('click', (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          // Get movie info
-          const movieTitle = card.querySelector('img').getAttribute('alt') || 'Movie';
-          const posterSrc = card.querySelector('img').getAttribute('src');
-          console.log("Starting party for:", movieTitle);
-          // Start party
-          startNewParty(movieTitle, posterSrc);
-        });
-        cardBody.appendChild(button);
-      }
-    });
-    
     // Setup watchparty page
     if (window.location.pathname.includes('watchparty.html')) {
       console.log("Setting up Watch Party page listeners");

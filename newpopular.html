@@ -27,11 +27,11 @@
             <section class="flex items-center">
                 <img class="w-28" src="./assets/images/logo.png" alt="">
                 <section class="flex text-white ps-3">
-                    <nav class="ps-3 text-xs cursor-pointer">Home</nav>
-                    <nav class="ps-3 text-xs cursor-pointer">TV Show</nav>
-                    <nav class="ps-3 text-xs cursor-pointer">Movie</nav>
-                    <nav class="ps-3 text-xs cursor-pointer">New & Popular</nav>
-                    <nav class="ps-3 text-xs cursor-pointer">My List</nav>
+                    <nav class="ps-3 text-xs cursor-pointer" onclick="window.location.href='index.html'">Home</nav>
+                    <nav class="ps-3 text-xs cursor-pointer" onclick="window.location.href='tvshow.html'">TV Show</nav>
+                    <nav class="ps-3 text-xs cursor-pointer" onclick="window.location.href='movie.html'">Movie</nav>
+                    <nav class="ps-3 text-xs cursor-pointer font-bold">New & Popular</nav>
+                    <nav class="ps-3 text-xs cursor-pointer" onclick="window.location.href='mylist.html'">My List</nav>
                     <nav class="ps-3 text-xs cursor-pointer" onclick="window.location.href='watchparty.html'">Watch Party <span class="bg-red-600 text-white text-[8px] px-1 py-0.5 rounded-sm ml-1">NEW</span></nav>
                 </section>
             </section>
@@ -40,259 +40,180 @@
                 <i class="bi bi-bell px-4 cursor-pointer"></i>
             </section>
         </div>
-        <!-- Header video -->
-        <div class="video w-screen relative">
-            <img class="z-9  absolute top-36 p-3" src="./assets/images/image2.webp" />
-            <video src="./assets/video/video.mp4" muted autoplay loop />
+        
+        <!-- Header Section -->
+        <div class="pt-24 w-screen">
+            <div class="px-4">
+                <h1 class="text-white text-4xl font-bold mt-8 mb-3">New & Popular</h1>
+                <p class="text-gray-400 mb-8">Discover the latest arrivals and trending content on Netflix</p>
+            </div>
         </div>
-        <!-- Korean movies -->
-        <section class="mx-auto w-screen relative" style="margin-top: -270px;z-index: 1;">
-            <p class="text-white text-xl px-4 mb-2">Korean</p>
+        
+        <!-- New This Week -->
+        <section class="mx-auto w-screen relative">
+            <p class="text-white text-xl px-4 mb-2">New This Week</p>
             <div class="owl-carousel owl-theme px-4">
                 <div class="item">
                     <div href="#" class="card bg-neutral-900 rounded-md cursor-pointer overflow-hidden">
-                        <img src="./assets/images/korean/img1.jpeg" alt="Korean Drama 1">
+                        <img src="./assets/images/trending/img3.webp" alt="New Release 1">
                         <section class="card-body p-3">
-                            <div  class="text-white flex mb-2">
+                            <div class="text-white flex mb-2">
                                 <section class="flex flex-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-                                      </svg>
-                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-                                      </svg>
-                                                   
+                                    </svg>
                                 </section>
                                 <section><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                                  </svg>
-                                  </section>
+                                </svg>
+                                </section>
                             </div>
-                            <p class="text-white text-sm"><span class="text-green-500">95% Match</span> <span class="mx-2">Limited Series</span>   </p>
-                            <p class="text-white text-xs">Crime . Thriller . Drama</p>
+                            <div class="bg-red-600 text-white text-xs px-2 py-1 rounded inline-block mb-2">NEW</div>
+                            <p class="text-white text-sm"><span class="text-green-500">96% Match</span> <span class="mx-2">Just Added</span></p>
+                            <p class="text-white text-xs">Thriller . Mystery . Suspense</p>
                         </section>
                     </div>
                 </div>
                 <div class="item">
                     <div href="#" class="card bg-neutral-900 rounded-md cursor-pointer overflow-hidden">
-                        <img src="./assets/images/korean/img2.jpeg" alt="Korean Drama 2">
+                        <img src="./assets/images/korean/img1.jpeg" alt="New Release 2">
                         <section class="card-body p-3">
-                            <div  class="text-white flex mb-2">
+                            <div class="text-white flex mb-2">
                                 <section class="flex flex-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-                                      </svg>
-                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-                                      </svg>
-                                                   
-                                </section>
-                                <section><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                                  </svg>
-                                  </section>
-                            </div>
-                            <p class="text-white text-sm"><span class="text-green-500">95% Match</span> <span class="mx-2">Limited Series</span>   </p>
-                            <p class="text-white text-xs">Crime . Thriller . Drama</p>
-                        </section>
-                    </div>
-                </div><div class="item">
-                    <div href="#" class="card bg-neutral-900 rounded-md cursor-pointer overflow-hidden">
-                        <img src="./assets/images/korean/img3.jpeg" alt="Korean Drama 3">
-                        <section class="card-body p-3">
-                            <div  class="text-white flex mb-2">
-                                <section class="flex flex-1">
+                                    </svg>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-                                      </svg>
-                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-                                      </svg>
-                                                   
+                                    </svg>
                                 </section>
                                 <section><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                                  </svg>
-                                  </section>
-                            </div>
-                            <p class="text-white text-sm"><span class="text-green-500">95% Match</span> <span class="mx-2">Limited Series</span>   </p>
-                            <p class="text-white text-xs">Crime . Thriller . Drama</p>
-                        </section>
-                    </div>
-                </div><div class="item">
-                    <div href="#" class="card bg-neutral-900 rounded-md cursor-pointer overflow-hidden">
-                        <img src="./assets/images/korean/img5.jpeg" alt="Korean Drama 4">
-                        <section class="card-body p-3">
-                            <div  class="text-white flex mb-2">
-                                <section class="flex flex-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-                                      </svg>
-                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-                                      </svg>
-                                                   
+                                </svg>
                                 </section>
-                                <section><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                                  </svg>
-                                  </section>
                             </div>
-                            <p class="text-white text-sm"><span class="text-green-500">95% Match</span> <span class="mx-2">Limited Series</span>   </p>
-                            <p class="text-white text-xs">Crime . Thriller . Drama</p>
-                        </section>
-                    </div>
-                </div><div class="item">
-                    <div href="#" class="card bg-neutral-900 rounded-md cursor-pointer overflow-hidden">
-                        <img src="./assets/images/korean/img6.jpeg" alt="Korean Drama 5">
-                        <section class="card-body p-3">
-                            <div  class="text-white flex mb-2">
-                                <section class="flex flex-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-                                      </svg>
-                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-                                      </svg>
-                                                   
-                                </section>
-                                <section><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                                  </svg>
-                                  </section>
-                            </div>
-                            <p class="text-white text-sm"><span class="text-green-500">95% Match</span> <span class="mx-2">Limited Series</span>   </p>
-                            <p class="text-white text-xs">Crime . Thriller . Drama</p>
+                            <div class="bg-red-600 text-white text-xs px-2 py-1 rounded inline-block mb-2">NEW</div>
+                            <p class="text-white text-sm"><span class="text-green-500">98% Match</span> <span class="mx-2">New Episode</span></p>
+                            <p class="text-white text-xs">Drama . Crime . Action</p>
                         </section>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- slider -->
-        <!-- slider -->
+        
+        <!-- Trending Now -->
         <section class="mx-auto w-screen relative mt-3">
-            <p class="text-white text-xl px-4 mb-2">Bollywood</p>
+            <p class="text-white text-xl px-4 mb-2">Trending Now</p>
             <div class="owl-carousel owl-theme px-4">
                 <div class="item">
                     <div href="#" class="card bg-neutral-900 rounded-md cursor-pointer overflow-hidden">
-                        <img src="./assets/images/trending/img1.webp" alt="Bollywood Movie 1">
+                        <img src="./assets/images/trending/img1.webp" alt="Trending 1">
                         <section class="card-body p-3">
-                            <div  class="text-white flex mb-2">
+                            <div class="text-white flex mb-2">
                                 <section class="flex flex-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-                                      </svg>
-                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-                                      </svg>
-                                                   
+                                    </svg>
                                 </section>
                                 <section><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                                  </svg>
-                                  </section>
+                                </svg>
+                                </section>
                             </div>
-                            <p class="text-white text-sm"><span class="text-green-500">95% Match</span> <span class="mx-2">Limited Series</span>   </p>
-                            <p class="text-white text-xs">Crime . Thriller . Drama</p>
+                            <div class="bg-yellow-500 text-black text-xs px-2 py-1 rounded inline-block mb-2">TOP 10</div>
+                            <p class="text-white text-sm"><span class="text-green-500">99% Match</span> <span class="mx-2">Trending #1</span></p>
+                            <p class="text-white text-xs">Action . Adventure . Fantasy</p>
                         </section>
                     </div>
                 </div>
                 <div class="item">
                     <div href="#" class="card bg-neutral-900 rounded-md cursor-pointer overflow-hidden">
-                        <img src="./assets/images/trending/img2.jpeg" alt="Bollywood Movie 2">
+                        <img src="./assets/images/trending/img2.jpeg" alt="Trending 2">
                         <section class="card-body p-3">
-                            <div  class="text-white flex mb-2">
+                            <div class="text-white flex mb-2">
                                 <section class="flex flex-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-                                      </svg>
-                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-                                      </svg>
-                                                   
-                                </section>
-                                <section><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                                  </svg>
-                                  </section>
-                            </div>
-                            <p class="text-white text-sm"><span class="text-green-500">95% Match</span> <span class="mx-2">Limited Series</span>   </p>
-                            <p class="text-white text-xs">Crime . Thriller . Drama</p>
-                        </section>
-                    </div>
-                </div><div class="item">
-                    <div href="#" class="card bg-neutral-900 rounded-md cursor-pointer overflow-hidden">
-                        <img src="./assets/images/trending/img3.webp" alt="Bollywood Movie 3">
-                        <section class="card-body p-3">
-                            <div  class="text-white flex mb-2">
-                                <section class="flex flex-1">
+                                    </svg>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-                                      </svg>
-                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-                                      </svg>
-                                                   
+                                    </svg>
                                 </section>
                                 <section><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                                  </svg>
-                                  </section>
-                            </div>
-                            <p class="text-white text-sm"><span class="text-green-500">95% Match</span> <span class="mx-2">Limited Series</span>   </p>
-                            <p class="text-white text-xs">Crime . Thriller . Drama</p>
-                        </section>
-                    </div>
-                </div><div class="item">
-                    <div href="#" class="card bg-neutral-900 rounded-md cursor-pointer overflow-hidden">
-                        <img src="./assets/images/trending/img5.jpeg" alt="Bollywood Movie 4">
-                        <section class="card-body p-3">
-                            <div  class="text-white flex mb-2">
-                                <section class="flex flex-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-                                      </svg>
-                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-                                      </svg>
-                                                   
+                                </svg>
                                 </section>
-                                <section><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                                  </svg>
-                                  </section>
                             </div>
-                            <p class="text-white text-sm"><span class="text-green-500">95% Match</span> <span class="mx-2">Limited Series</span>   </p>
-                            <p class="text-white text-xs">Crime . Thriller . Drama</p>
-                        </section>
-                    </div>
-                </div><div class="item">
-                    <div href="#" class="card bg-neutral-900 rounded-md cursor-pointer overflow-hidden">
-                        <img src="./assets/images/trending/img7.webp" alt="Bollywood Movie 5">
-                        <section class="card-body p-3">
-                            <div  class="text-white flex mb-2">
-                                <section class="flex flex-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-                                      </svg>
-                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-                                      </svg>
-                                                   
-                                </section>
-                                <section><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                                  </svg>
-                                  </section>
-                            </div>
-                            <p class="text-white text-sm"><span class="text-green-500">95% Match</span> <span class="mx-2">Limited Series</span>   </p>
-                            <p class="text-white text-xs">Crime . Thriller . Drama</p>
+                            <div class="bg-yellow-500 text-black text-xs px-2 py-1 rounded inline-block mb-2">TOP 10</div>
+                            <p class="text-white text-sm"><span class="text-green-500">97% Match</span> <span class="mx-2">Trending #2</span></p>
+                            <p class="text-white text-xs">Drama . Thriller . Crime</p>
                         </section>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- slider -->
+
+        <!-- Coming Soon -->
+        <section class="mx-auto w-screen relative mt-3">
+            <p class="text-white text-xl px-4 mb-2">Coming Soon</p>
+            <div class="owl-carousel owl-theme px-4">
+                <div class="item">
+                    <div href="#" class="card bg-neutral-900 rounded-md cursor-pointer overflow-hidden">
+                        <img src="./assets/images/korean/img6.jpeg" alt="Coming Soon 1">
+                        <section class="card-body p-3">
+                            <div class="text-white flex mb-2">
+                                <section class="flex flex-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+                                    </svg>
+                                </section>
+                                <section><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                                </svg>
+                                </section>
+                            </div>
+                            <div class="bg-blue-500 text-white text-xs px-2 py-1 rounded inline-block mb-2">COMING SOON</div>
+                            <p class="text-white text-sm"><span class="mx-2">Arriving June 15</span></p>
+                            <p class="text-white text-xs">Sci-Fi . Thriller . Adventure</p>
+                        </section>
+                    </div>
+                </div>
+                <div class="item">
+                    <div href="#" class="card bg-neutral-900 rounded-md cursor-pointer overflow-hidden">
+                        <img src="./assets/images/trending/img7.webp" alt="Coming Soon 2">
+                        <section class="card-body p-3">
+                            <div class="text-white flex mb-2">
+                                <section class="flex flex-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+                                    </svg>
+                                </section>
+                                <section><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                                </svg>
+                                </section>
+                            </div>
+                            <div class="bg-blue-500 text-white text-xs px-2 py-1 rounded inline-block mb-2">COMING SOON</div>
+                            <p class="text-white text-sm"><span class="mx-2">Arriving July 1</span></p>
+                            <p class="text-white text-xs">Action . Comedy . Heist</p>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- footer -->
         <footer class="bg-black text-[#737373] py-14 px-4 md:px-12 mt-20 border-t border-[#222] w-screen">
             <div class="max-w-6xl mx-auto">
@@ -368,7 +289,6 @@
     </div>
    
     <script>
-       
        $('.owl-carousel').owlCarousel({
             loop: true,
             margin: 10,

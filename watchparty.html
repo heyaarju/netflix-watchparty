@@ -1,0 +1,283 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="./OwlCarousel2-2.3.4 2/dist/assets/owl.carousel.min.css">
+    <script src="./OwlCarousel2-2.3.4 2/dist/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="./OwlCarousel2-2.3.4 2/dist//assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./assets/watchparty.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script>
+        // Firebase config
+        const firebaseConfig = {
+            apiKey: "AIzaSyCVO0s3ki2g9z1bwG4AqplC_x3C5gqyFEE",
+            authDomain: "netflix-watch-party.firebaseapp.com",
+            databaseURL: "https://netflix-watch-party-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "netflix-watch-party",
+            storageBucket: "netflix-watch-party.firebasestorage.app",
+            messagingSenderId: "506431590630",
+            appId: "1:506431590630:web:3955be0d0776307d4b6b27",
+            measurementId: "G-GS5F9HYXY6"
+        };
+        
+        // Init Firebase
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+        console.log("Firebase initialized with config:", firebaseConfig.projectId);
+    </script>
+    <script src="./assets/watchparty.js"></script>
+</head>
+
+<body class="bg-gray-950">
+    <div class="container w-screen relative">
+        <!-- Nav -->
+        <div class="navbar bg-zinc-900/[0.5] p-3 flex items-center justify-between w-screen fixed z-10">
+            <section class="flex items-center">
+                <img class="w-28" src="./assets/images/logo.png" alt="">
+                <section class="flex text-white ps-3">
+                    <nav class="ps-3 text-xs cursor-pointer" onclick="window.location.href='index.html'">Home</nav>
+                    <nav class="ps-3 text-xs cursor-pointer">TV Show</nav>
+                    <nav class="ps-3 text-xs cursor-pointer">Movie</nav>
+                    <nav class="ps-3 text-xs cursor-pointer">New & Popular</nav>
+                    <nav class="ps-3 text-xs cursor-pointer">My List</nav>
+                    <nav class="ps-3 text-xs cursor-pointer font-bold" onclick="window.location.href='watchparty.html'">Watch Party <span class="bg-red-600 text-white text-[8px] px-1 py-0.5 rounded-sm ml-1">NEW</span></nav>
+                </section>
+            </section>
+            <section class="flex items-center justify-between text-white">
+                <i class="bi bi-search px-4 cursor-pointer"></i>
+                <i class="bi bi-bell px-4 cursor-pointer"></i>
+            </section>
+        </div>
+
+        <!-- Party page -->
+        <div class="pt-24 pb-12 px-8 text-white">
+            <h1 class="text-4xl font-bold mb-6">Watch Party</h1>
+            <p class="text-lg mb-10">Watch movies and shows together with friends, no matter where they are.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-zinc-900 p-6 rounded-lg">
+                    <h2 class="text-2xl font-bold mb-4">Start a Watch Party</h2>
+                    <p class="mb-6">Choose a movie or show, invite friends, and enjoy watching together in real-time.</p>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center mr-3">1</div>
+                            <p>Select a movie or show from Netflix</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center mr-3">2</div>
+                            <p>Click "Start Watch Party" on the title</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center mr-3">3</div>
+                            <p>Invite friends using the sharing link</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center mr-3">4</div>
+                            <p>Chat and watch together in sync!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-zinc-900 p-6 rounded-lg">
+                    <h2 class="text-2xl font-bold mb-4">Join a Watch Party</h2>
+                    <p class="mb-4">Got an invite? Enter the party code below to join:</p>
+                    <div class="flex mt-6">
+                        <input type="text" placeholder="Enter party code..." class="bg-gray-800 text-white px-4 py-2 flex-grow rounded-l-md focus:outline-none">
+                        <button class="bg-red-600 text-white px-6 py-2 rounded-r-md hover:bg-red-700 transition">Join</button>
+                    </div>
+                    <p class="mt-4 text-sm text-gray-400">Or use the invitation link you received</p>
+                </div>
+            </div>
+
+            <h2 class="text-2xl font-bold mb-6">Active Watch Parties</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Party 1 -->
+                <div class="bg-zinc-900 rounded-lg overflow-hidden" data-party-id="abc123">
+                    <img src="./assets/images/korean/img1.jpeg" alt="Korean Drama 1" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold mb-2">Korean Drama 1</h3>
+                        <p class="text-sm text-gray-400 mb-3">Hosted by David • 3 participants</p>
+                        <div class="flex -space-x-2 mb-4">
+                            <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-xs border-2 border-zinc-900">D</div>
+                            <div class="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-xs border-2 border-zinc-900">S</div>
+                            <div class="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center text-xs border-2 border-zinc-900">E</div>
+                        </div>
+                        <button class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 transition">Join Party</button>
+                    </div>
+                </div>
+
+                <!-- Party 2 -->
+                <div class="bg-zinc-900 rounded-lg overflow-hidden" data-party-id="def456">
+                    <img src="./assets/images/trending/img2.jpeg" alt="Bollywood Movie 2" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold mb-2">Bollywood Movie 2</h3>
+                        <p class="text-sm text-gray-400 mb-3">Hosted by Sarah • 5 participants</p>
+                        <div class="flex -space-x-2 mb-4">
+                            <div class="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center text-xs border-2 border-zinc-900">S</div>
+                            <div class="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center text-xs border-2 border-zinc-900">A</div>
+                            <div class="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-xs border-2 border-zinc-900">J</div>
+                            <div class="w-8 h-8 rounded-full bg-pink-500 flex items-center justify-center text-xs border-2 border-zinc-900">M</div>
+                            <div class="w-8 h-8 rounded-full bg-gray-500 flex items-center justify-center text-xs border-2 border-zinc-900">+1</div>
+                        </div>
+                        <button class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 transition">Join Party</button>
+                    </div>
+                </div>
+
+                <!-- Party 3 -->
+                <div class="bg-zinc-900 rounded-lg overflow-hidden" data-party-id="ghi789">
+                    <img src="./assets/images/korean/img5.jpeg" alt="Korean Drama 4" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold mb-2">Korean Drama 4</h3>
+                        <p class="text-sm text-gray-400 mb-3">Hosted by Mike • 2 participants</p>
+                        <div class="flex -space-x-2 mb-4">
+                            <div class="w-8 h-8 rounded-full bg-green-600 flex items-center justify-center text-xs border-2 border-zinc-900">M</div>
+                            <div class="w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center text-xs border-2 border-zinc-900">L</div>
+                        </div>
+                        <button class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 transition">Join Party</button>
+                    </div>
+                </div>
+
+                <!-- Party 4 -->
+                <div class="bg-zinc-900 rounded-lg overflow-hidden" data-party-id="jkl012">
+                    <img src="./assets/images/trending/img7.webp" alt="Bollywood Movie 5" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold mb-2">Bollywood Movie 5</h3>
+                        <p class="text-sm text-gray-400 mb-3">Hosted by Jessica • 4 participants</p>
+                        <div class="flex -space-x-2 mb-4">
+                            <div class="w-8 h-8 rounded-full bg-teal-500 flex items-center justify-center text-xs border-2 border-zinc-900">J</div>
+                            <div class="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center text-xs border-2 border-zinc-900">T</div>
+                            <div class="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center text-xs border-2 border-zinc-900">R</div>
+                            <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-xs border-2 border-zinc-900">K</div>
+                        </div>
+                        <button class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 transition">Join Party</button>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-2xl font-bold mt-12 mb-6">Popular for Watch Parties</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <div class="bg-zinc-900 rounded-md overflow-hidden cursor-pointer group">
+                    <div class="relative">
+                        <img src="./assets/images/korean/img1.jpeg" alt="Korean Drama 1" class="w-full">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="watch-party-btn">Start Watch Party</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-zinc-900 rounded-md overflow-hidden cursor-pointer group">
+                    <div class="relative">
+                        <img src="./assets/images/korean/img2.jpeg" alt="Korean Drama 2" class="w-full">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="watch-party-btn">Start Watch Party</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-zinc-900 rounded-md overflow-hidden cursor-pointer group">
+                    <div class="relative">
+                        <img src="./assets/images/korean/img3.jpeg" alt="Korean Drama 3" class="w-full">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="watch-party-btn">Start Watch Party</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-zinc-900 rounded-md overflow-hidden cursor-pointer group">
+                    <div class="relative">
+                        <img src="./assets/images/trending/img1.webp" alt="Bollywood Movie 1" class="w-full">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="watch-party-btn">Start Watch Party</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-zinc-900 rounded-md overflow-hidden cursor-pointer group">
+                    <div class="relative">
+                        <img src="./assets/images/trending/img2.jpeg" alt="Bollywood Movie 2" class="w-full">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="watch-party-btn">Start Watch Party</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-zinc-900 rounded-md overflow-hidden cursor-pointer group">
+                    <div class="relative">
+                        <img src="./assets/images/trending/img3.webp" alt="Bollywood Movie 3" class="w-full">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="watch-party-btn">Start Watch Party</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Watch Party Content -->
+
+        <!-- footer -->
+        <div class="w-screen mt-3 pt-8 pb-8 px-4 flex">
+           <div class="mx-auto w-1/2 justify-evenly flex">
+            <section>
+                <p class="text-white text-base mb-3">Jobs</p>
+               <p class="text-white text-base mb-3">Investor Relations</p>
+               <p class="text-white text-base mb-3">Ways to Watch</p>
+               <p class="text-white text-base mb-3">Terms of Use</p>
+               </section>
+               <section>
+                <p class="text-white text-base mb-3">Privacy</p>
+               <p class="text-white text-base mb-3">Cookie Preferences</p>
+               <p class="text-white text-base mb-3">Legal Notices</p>
+               </section><section>
+                <p class="text-white text-base mb-3">Jobs</p>
+               <p class="text-white text-base mb-3">Investor Relations</p>
+               <p class="text-white text-base mb-3">Ways to Watch</p>
+               <p class="text-white text-base mb-3">Terms of Use</p>
+               </section>
+               <section>
+                <p class="text-white text-base mb-3">Privacy</p>
+               <p class="text-white text-base mb-3">Cookie Preferences</p>
+               <p class="text-white text-base mb-3">Legal Notices</p>
+               </section>
+           </div>
+        </div>
+        <!-- footer -->
+    </div>
+    
+    <script>
+        // Initialize any active watch party buttons
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add click handlers for Join Party buttons
+            const joinButtons = document.querySelectorAll('.bg-red-600');
+            joinButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    // Get the movie title
+                    const card = e.target.closest('.bg-zinc-900');
+                    const title = card.querySelector('h3').textContent;
+                    const image = card.querySelector('img').getAttribute('src');
+                    
+                    // Open watch party modal
+                    openWatchPartyModal(title, image);
+                });
+            });
+            
+            // Add click handlers for Watch Party thumbnails
+            const partyThumbnails = document.querySelectorAll('.group');
+            partyThumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', () => {
+                    const image = thumbnail.querySelector('img');
+                    openWatchPartyModal(image.getAttribute('alt'), image.getAttribute('src'));
+                });
+            });
+        });
+        
+        function openWatchPartyModal(title, image) {
+            // This function should be defined in watchparty.js, but we'll call it from here
+            const event = new CustomEvent('openWatchParty', { 
+                detail: { title, image } 
+            });
+            document.dispatchEvent(event);
+        }
+    </script>
+</body>
+
+</html> 
